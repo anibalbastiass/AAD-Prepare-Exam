@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#2a5daa</color>
+    <color name="primaryColorAlpha50">#802a5daa</color>
+    <color name="primaryDarkColor">#0c3776</color>
+    <color name="accentColor">#f27e17</color>
+    <color name="revealColor">#2b4c7c</color>
+    <color name="textPrimaryColorDark">#333333</color>
+
+    <color name="textPrimaryColor">#3a3a3a</color>
+    <color name="circle2Color">#71d1e5</color>
+    <color name="normalTextColor">#4a4a4a</color>
+
+    <color name="grey">#666666</color>
+
+    <!-- Error view-->
+    <color name="errorText">#666666</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00ffffff</color>
+</resources>

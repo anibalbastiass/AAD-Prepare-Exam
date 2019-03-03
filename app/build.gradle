@@ -1,0 +1,116 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.anibalbastias.android.marvelapp"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        resValue "string", "marvel_tenant", "$globalRetailDependencies.MARVEL_TENANT"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+kapt {
+    generateStubs = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // Check if integrate apibase and basemodule from Carsales
+
+    def presentationDependencies = rootProject.ext.marvelDependencies
+
+    implementation presentationDependencies.kotlinStdlib
+    implementation presentationDependencies.androidDesign
+    implementation presentationDependencies.androidSupportv4
+    implementation presentationDependencies.androidCompatv7
+    implementation presentationDependencies.androidCardView
+    implementation presentationDependencies.androidRecyclerView
+    implementation presentationDependencies.multidex
+    implementation presentationDependencies.rxAndroid
+    implementation presentationDependencies.retrofit2
+    implementation presentationDependencies.retrofit2Converter
+    implementation presentationDependencies.retrofit2RxAdapter
+    implementation presentationDependencies.gson
+    implementation presentationDependencies.okHttpLoggingInterceptor
+    implementation presentationDependencies.okhttp
+    implementation presentationDependencies.okhttpUrlconnection
+
+    //Dagger
+    implementation presentationDependencies.dagger
+    kapt presentationDependencies.daggerCompiler
+
+    implementation presentationDependencies.daggerAndroid
+    kapt presentationDependencies.daggerAndroidCompiler
+
+    // ViewModel and LiveData
+    implementation presentationDependencies.androidArchExt
+    kapt presentationDependencies.androidArchCompiler
+
+    // Room (use 1.1.0-alpha1 for latest alpha)
+    implementation presentationDependencies.room
+    kapt presentationDependencies.roomCompiler
+
+    // RxJava support for Room
+    implementation presentationDependencies.roomRxJava
+
+    // ReactiveStreams support for LiveData
+    implementation presentationDependencies.lcReactiveStreams
+
+    //MaterialScrollBar
+    implementation 'com.simplecityapps:recyclerview-fastscroll:1.0.17'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.0@aar') {
+        transitive = true
+    }
+    implementation 'com.android.support:customtabs:28.0.0'
+    implementation 'com.synnapps:carouselview:0.1.4'
+    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+    implementation 'com.google.android:flexbox:0.3.2'
+
+    // Java8 support for Lifecycles
+    implementation 'android.arch.lifecycle:common-java8:1.1.1'
+
+    // Facebook
+    implementation 'com.facebook.android:facebook-android-sdk:4.34.0'
+
+    //Google Analytics
+    implementation 'com.google.android.gms:play-services-analytics:16.0.3'
+
+    // Jsoup HTML parser
+    implementation 'org.jsoup:jsoup:1.11.2'
+    //Facebook
+    implementation 'com.facebook.android:facebook-android-sdk:4.34.0'
+
+//    kapt presentationDependencies.databinding
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.2.71")
+}

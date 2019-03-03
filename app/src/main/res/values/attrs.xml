@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DotProgressBar">
+        <attr name="startColor" format="color"/>
+        <attr name="endColor" format="color"/>
+        <attr name="duration" format="integer"/>
+        <attr name="amount" format="integer"/>
+        <attr name="animationDirection" format="enum">
+            <enum name="right" value="1"/>
+            <enum name="left" value="-1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>
