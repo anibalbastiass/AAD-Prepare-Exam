@@ -1,0 +1,76 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/primaryDarkColor</item>
+
+        <!-- enable window content transitions -->
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/primaryDarkColor
+        </item>
+
+        <item name="colorControlNormal">@color/primaryColor</item>
+        <item name="colorControlActivated">@color/primaryDarkColor</item>
+        <item name="colorControlHighlight">@color/circle2Color</item>
+        <item name="colorButtonNormal">@color/primaryColor</item>
+
+
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:textColorPrimary">@color/textPrimaryColor</item>
+        <item name="android:textColorSecondary">@color/textPrimaryColor</item>
+
+
+        <item name="android:typeface">serif</item>
+        <item name="android:actionModeStyle">@style/AppTheme.ActionMode</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:textAppearanceSmallPopupMenu">@style/PopupMenuTextAppearanceSmall</item>
+        <!--default font -->
+        <item name="android:fontFamily">@font/opensans_regular</item>
+    </style>
+
+    <!-- ActionMode -->
+    <style name="AppTheme.ActionMode" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionModeBackground">@color/white</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="PopupMenu" parent="@style/Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@color/white</item>
+        <item name="android:popupElevation">4dp</item>
+    </style>
+
+    <style name="PopupMenuTextAppearanceSmall">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/normalTextColor</item>
+    </style>
+
+    <style name="AppTheme.Widget.ActionButton" parent="@style/Widget.AppCompat.ActionButton">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="closeButtonActionMode" parent="Widget.AppCompat.Light.ActionButton.CloseMode">
+        <item name="android:tint">@color/primaryColor</item>
+    </style>
+
+    <style name="ToolBarDetailsStyle" parent="Theme.AppCompat">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textColorPrimary">@color/textPrimaryColor</item>
+        <item name="android:textColorSecondary">@color/textPrimaryColor</item>
+        <item name="actionMenuTextColor">@color/textPrimaryColor</item>
+        <item name="colorControlHighlight">@color/circle2Color</item>
+        <item name="actionButtonStyle">@style/AppTheme.Widget.ActionButton</item>
+        <item name="colorControlNormal">@color/primaryColor</item>
+
+        <!-- ActionMode -->
+        <item name="actionModeBackground">@color/white</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="actionModeCloseButtonStyle">@style/closeButtonActionMode</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+</resources>

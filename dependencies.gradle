@@ -1,0 +1,202 @@
+allprojects {
+    repositories {
+        maven { url "https://maven.google.com" }
+        jcenter()
+        google()
+    }
+}
+
+ext {
+    // Marvel App
+    appMarvelVersionCode = 1
+    appMarvelVersionName = '0.0.1'
+
+    androidBuildToolsVersion = '"28.0.2"'
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 28
+    androidCompileSdkVersion = 28
+
+    //Libraries
+    supportLibraryVersion = '28.0.0'
+    daggerVersion = '2.15'
+    butterKnifeVersion = '8.8.1'
+    roomVersion = '1.1.1'
+    androidArchVersion = '1.1.1'
+    rxJavaVersion = '2.0.2'
+    rxAndroidVersion = '2.0.1'
+    javaxAnnotationVersion = '1.0'
+    gsonVersion = '2.3'
+    retrofitVersion = '2.3.0'
+    okHttpVersion = '3.6.0'
+    rxKotlinVersion = '0.60.0'
+    multidexVersion = '1.0.2'
+    javaxInjectVersion = '1'
+    glideVersion = '4.7.1'
+    playServicesLibrariesVersion = '15.0.2'
+    constraintLayoutVersion = '1.1.3'
+
+    junitVersion = '4.12'
+    runnerVersion = '1.0.2'
+    expressoVersion = '3.0.2'
+
+    javaLifeCycleVersion = '1.1.1'
+    nav_version = "1.0.0-alpha02"
+    eventbus_version = "3.1.1"
+    ktx_version = "1.0.0-alpha1"
+    customCaugeVersion = "1.0.3"
+
+    globalRetailDependencies = [
+            APIKEY                               : "54e5b567475f0f2eccd09422e42fb944",
+
+            // ENDPOINTS
+            /***** Production ****/
+            MARVEL_ENDPOINT                      : "https://gateway.marvel.com:443/v1/public/",
+    ]
+
+    marvelDependencies = [daggerAndroidCompiler   : "com.google.dagger:dagger-android-processor:${daggerVersion}",
+                          daggerAndroid           : "com.google.dagger:dagger-android-support:${daggerVersion}",
+                          daggerCompiler          : "com.google.dagger:dagger-compiler:${daggerVersion}",
+                          dagger                  : "com.google.dagger:dagger:${daggerVersion}",
+                          butterKnife             : "com.jakewharton:butterknife:${butterKnifeVersion}",
+                          butterKnifeCompiler     : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+                          androidRecyclerView     : "com.android.support:recyclerview-v7:${supportLibraryVersion}",
+                          androidCardView         : "com.android.support:cardview-v7:${supportLibraryVersion}",
+                          androidDesign           : "com.android.support:design:${supportLibraryVersion}",
+                          androidCompatv7         : "com.android.support:appcompat-v7:${supportLibraryVersion}",
+                          androidSupportv4        : "com.android.support:support-v4:${supportLibraryVersion}",
+                          rxJava                  : "io.reactivex.rxjava2:rxkotlin:${rxJavaVersion}",
+                          rxAndroid               : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+                          javaxAnnotation         : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+
+                          rxKotlin                : "io.reactivex:rxkotlin:${rxKotlinVersion}",
+                          multidex                : "com.android.support:multidex:${multidexVersion}",
+                          retrofit2               : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+                          retrofit2Converter      : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+                          retrofit2RxAdapter      : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+                          gson                    : "com.google.code.gson:gson:${gsonVersion}",
+                          okHttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+                          okhttp                  : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+                          okhttpUrlconnection     : "com.squareup.okhttp3:okhttp-urlconnection:${okHttpVersion}",
+                          kotlinStdlib            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}",
+                          androidArchExt          : "android.arch.lifecycle:extensions:${androidArchVersion}",
+                          androidArchCompiler     : "android.arch.lifecycle:compiler:${androidArchVersion}",
+                          room                    : "android.arch.persistence.room:runtime:${roomVersion}",
+                          roomCompiler            : "android.arch.persistence.room:compiler:${roomVersion}",
+                          roomRxJava              : "android.arch.persistence.room:rxjava2:${roomVersion}",
+                          lcReactiveStreams       : "android.arch.lifecycle:reactivestreams:${androidArchVersion}",
+                          glide                   : "com.github.bumptech.glide:glide:${glideVersion}",
+                          glideCompiler           : "com.github.bumptech.glide:compiler:${glideVersion}"
+
+    ]
+
+    domainDependencies = [daggerCompiler    : "com.google.dagger:dagger-compiler:${daggerVersion}",
+                          dagger            : "com.google.dagger:dagger:${daggerVersion}",
+                          javaxAnnotation   : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+                          javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
+                          rxJava            : "io.reactivex.rxjava2:rxkotlin:${rxJavaVersion}",
+                          gson              : "com.google.code.gson:gson:${gsonVersion}",
+                          retrofit2Converter: "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+    ]
+
+    dataDependencies = [daggerCompiler          : "com.google.dagger:dagger-compiler:${daggerVersion}",
+                        dagger                  : "com.google.dagger:dagger:${daggerVersion}",
+                        retrofit2               : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+                        retrofit2Converter      : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+                        retrofit2RxAdapter      : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+                        gson                    : "com.google.code.gson:gson:${gsonVersion}",
+                        rxKotlin                : "io.reactivex.rxjava2:rxkotlin:${rxJavaVersion}",
+                        rxAndroid               : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+                        javaxAnnotation         : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+                        supportAnnotations      : "com.android.support:support-annotations:${supportLibraryVersion}",
+                        okHttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+                        okhttp                  : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+                        okhttpUrlconnection     : "com.squareup.okhttp3:okhttp-urlconnection:${okHttpVersion}",
+                        kotlinStdlib            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}",
+                        androidArchExt          : "android.arch.lifecycle:extensions:${androidArchVersion}",
+                        androidArchCompiler     : "android.arch.lifecycle:compiler:${androidArchVersion}",
+                        room                    : "android.arch.persistence.room:runtime:${roomVersion}",
+                        roomCompiler            : "android.arch.persistence.room:compiler:${roomVersion}",
+                        roomRxJava              : "android.arch.persistence.room:rxjava2:${roomVersion}",
+                        lcReactiveStreams       : "android.arch.lifecycle:reactivestreams:${androidArchVersion}",
+                        volley                  : "com.android.volley:volley:1.1.0",
+                        javaxInject             : "javax.inject:javax.inject:${javaxInjectVersion}",
+                        rxJava                  : "io.reactivex.rxjava2:rxkotlin:${rxJavaVersion}",
+                        kotlinReflect           : "org.jetbrains.kotlin:kotlin-reflect:${kotlin_version}",
+                        junit                   : "junit:junit:${junitVersion}",
+                        testRunner              : "com.android.support.test:runner:${runnerVersion}",
+                        espresso                : "com.android.support.test.espresso:espresso-core:${expressoVersion}",
+                        javaLifecycle           : "android.arch.lifecycle:common-java8:${javaLifeCycleVersion}"
+
+    ]
+
+    modulenavDependencies = [androidDesign   : "com.android.support:design:${supportLibraryVersion}",
+                             androidCompatv7 : "com.android.support:appcompat-v7:${supportLibraryVersion}",
+                             androidSupportv4: "com.android.support:support-v4:${supportLibraryVersion}"
+    ]
+
+    moduleDependencies = [daggerAndroidCompiler   : "com.google.dagger:dagger-android-processor:${daggerVersion}",
+                          daggerAndroid           : "com.google.dagger:dagger-android-support:${daggerVersion}",
+                          daggerCompiler          : "com.google.dagger:dagger-compiler:${daggerVersion}",
+                          dagger                  : "com.google.dagger:dagger:${daggerVersion}",
+                          butterKnife             : "com.jakewharton:butterknife:${butterKnifeVersion}",
+                          butterKnifeCompiler     : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+                          androidRecyclerView     : "com.android.support:recyclerview-v7:${supportLibraryVersion}",
+                          androidCardView         : "com.android.support:cardview-v7:${supportLibraryVersion}",
+                          androidDesign           : "com.android.support:design:${supportLibraryVersion}",
+                          androidCompatv7         : "com.android.support:appcompat-v7:${supportLibraryVersion}",
+                          androidSupportv4        : "com.android.support:support-v4:${supportLibraryVersion}",
+                          rxJava                  : "io.reactivex.rxjava2:rxkotlin:${rxJavaVersion}",
+                          rxAndroid               : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+                          javaxAnnotation         : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+                          rxKotlin                : "io.reactivex:rxkotlin:${rxKotlinVersion}",
+                          multidex                : "com.android.support:multidex:${multidexVersion}",
+                          retrofit2               : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+                          retrofit2Converter      : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+                          retrofit2RxAdapter      : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+                          gson                    : "com.google.code.gson:gson:${gsonVersion}",
+                          okHttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+                          okhttp                  : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+                          okhttpUrlconnection     : "com.squareup.okhttp3:okhttp-urlconnection:${okHttpVersion}",
+                          kotlinStdlib            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}",
+                          androidArchExt          : "android.arch.lifecycle:extensions:${androidArchVersion}",
+                          androidArchCompiler     : "android.arch.lifecycle:compiler:${androidArchVersion}",
+                          room                    : "android.arch.persistence.room:runtime:${roomVersion}",
+                          roomCompiler            : "android.arch.persistence.room:compiler:${roomVersion}",
+                          roomRxJava              : "android.arch.persistence.room:rxjava2:${roomVersion}",
+                          lcReactiveStreams       : "android.arch.lifecycle:reactivestreams:${androidArchVersion}",
+                          glide                   : "com.github.bumptech.glide:glide:${glideVersion}",
+                          glideCompiler           : "com.github.bumptech.glide:compiler:${glideVersion}",
+
+                          kotlinReflect           : "org.jetbrains.kotlin:kotlin-reflect:${kotlin_version}",
+
+                          junit                   : "junit:junit:${junitVersion}",
+                          testRunner              : "com.android.support.test:runner:${runnerVersion}",
+                          espresso                : "com.android.support.test.espresso:espresso-core:${expressoVersion}",
+                          javaLifecycle           : "android.arch.lifecycle:common-java8:${javaLifeCycleVersion}",
+
+                          navFragment             : "android.arch.navigation:navigation-fragment:${nav_version}",
+                          navUI                   : "android.arch.navigation:navigation-ui:${nav_version}",
+                          navTest                 : "android.arch.navigation:navigation-testing:${nav_version}",
+
+                          eventbus                : "org.greenrobot:eventbus:${eventbus_version}",
+                          constraintLayout        : "com.android.support.constraint:constraint-layout:$constraintLayoutVersion",
+                          customCauge             : "pl.pawelkleczkowski.customgauge:CustomGauge:${customCaugeVersion}",
+                          ktx                     : "androidx.core:core-ktx:${ktx_version}"
+
+    ]
+
+    // Architecture Components dependencies
+    dep = [testJunit          : "junit:junit:4.12",
+           gson               : "com.google.code.gson:gson:2.8.0",
+           supportAnnotations : "com.android.support:support-annotations:$supportLibraryVersion",
+           supportV4          : "com.android.support:support-v4:$supportLibraryVersion",
+           supportCompat      : "com.android.support:appcompat-v7:$supportLibraryVersion",
+           supportRecyclerview: "com.android.support:recyclerview-v7:$supportLibraryVersion",
+           supportCardView    : "com.android.support:cardview-v7:$supportLibraryVersion",
+           supportDesign      : "com.android.support:design:$supportLibraryVersion",
+           constraint_layout  : "com.android.support.constraint:constraint-layout:$constraintLayoutVersion",
+           lifecycleRuntime   : "android.arch.lifecycle:runtime:$androidArchVersion",
+           lifecycleExtensions: "android.arch.lifecycle:extensions:$androidArchVersion",
+           lifecycleJava8     : "android.arch.lifecycle:common-java8:$androidArchVersion",
+           lifecycleCompiler  : "android.arch.lifecycle:compiler:$androidArchVersion"]
+}
