@@ -1,6 +1,6 @@
 package com.anibalbastias.android.marvelapp.base.module.executor
 
-import com.anibalbastias.android.marvelapp.base.api.domain.executor.APIPostExecutionThread
+import com.anibalbastias.android.marvelapp.base.api.domain.base.executor.APIPostExecutionThread
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers

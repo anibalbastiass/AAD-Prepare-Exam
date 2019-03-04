@@ -1,4 +1,4 @@
-package com.anibalbastias.android.marvelapp.base.api.domain
+package com.anibalbastias.android.marvelapp.base.api.domain.base
 
 /**
  * Created by anibalbastias on 1/30/18.

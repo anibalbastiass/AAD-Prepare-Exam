@@ -1,7 +1,7 @@
-package com.anibalbastias.android.marvelapp.base.api.domain.interactor
+package com.anibalbastias.android.marvelapp.base.api.domain.base.interactor
 
-import com.anibalbastias.android.marvelapp.base.api.domain.executor.APIPostExecutionThread
-import com.anibalbastias.android.marvelapp.base.api.domain.executor.APIThreadExecutor
+import com.anibalbastias.android.marvelapp.base.api.domain.base.executor.APIPostExecutionThread
+import com.anibalbastias.android.marvelapp.base.api.domain.base.executor.APIThreadExecutor
 import io.reactivex.Completable
 import io.reactivex.disposables.Disposable
 import io.reactivex.disposables.Disposables

@@ -1,6 +1,8 @@
 package com.anibalbastias.android.marvelapp.module
 
 import com.anibalbastias.android.marvelapp.BuildConfig
+import com.anibalbastias.android.marvelapp.MarvelApplication
+import com.anibalbastias.android.marvelapp.R
 import com.anibalbastias.android.marvelapp.base.api.data.marvel.MarvelAPIGSONManager
 import com.anibalbastias.android.marvelapp.base.api.data.marvel.MarvelApiService
 import com.google.gson.Gson
@@ -47,7 +49,7 @@ class MarvelAPIModule {
     @Singleton
     @Named("provideMarvelRetrofit")
     fun provideRetrofit(@Named("provideRetrofitHttpClient") okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-        .baseUrl(BASE_ENDPOINT)
+        .baseUrl(MarvelApplication.appContext.getString(R.string.marvel_endpoint))
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create(makeGson()))
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -57,7 +59,6 @@ class MarvelAPIModule {
         return MarvelAPIGSONManager.createGsonBuilder()
             .setLenient()
             .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
-//                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
             .create()
     }
 

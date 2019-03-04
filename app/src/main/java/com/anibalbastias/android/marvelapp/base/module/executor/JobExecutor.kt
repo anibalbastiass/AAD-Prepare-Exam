@@ -1,6 +1,6 @@
 package com.anibalbastias.android.marvelapp.base.module.executor
 
-import com.anibalbastias.android.marvelapp.base.api.domain.executor.APIThreadExecutor
+import com.anibalbastias.android.marvelapp.base.api.domain.base.executor.APIThreadExecutor
 import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ThreadFactory
 import java.util.concurrent.ThreadPoolExecutor
