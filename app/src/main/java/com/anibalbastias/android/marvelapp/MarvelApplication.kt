@@ -23,6 +23,7 @@ class MarvelApplication : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
         appComponent().inject(this)
+        appContext = this
     }
 }
 

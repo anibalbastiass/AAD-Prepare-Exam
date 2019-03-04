@@ -6,13 +6,14 @@ import android.os.Bundle
 import android.view.View
 import com.anibalbastias.android.marvelapp.R
 import com.anibalbastias.android.marvelapp.appComponent
+import com.anibalbastias.android.marvelapp.base.api.data.dataStoreFactory.common.page.PageData
 import com.anibalbastias.android.marvelapp.base.module.ViewModelFactory
 import com.anibalbastias.android.marvelapp.base.module.getViewModel
 import com.anibalbastias.android.marvelapp.base.view.BaseModuleFragment
+import com.anibalbastias.android.marvelapp.base.view.ResourceState
 import com.anibalbastias.android.marvelapp.databinding.FragmentSeriesBinding
 import com.anibalbastias.android.marvelapp.ui.series.viewmodel.SeriesViewModel
-import com.anibalbastias.android.marvelapp.util.applyFontForToolbarTitle
-import com.anibalbastias.android.marvelapp.util.setNoArrowUpToolbar
+import com.anibalbastias.android.marvelapp.util.*
 import javax.inject.Inject
 
 class SeriesFragment : BaseModuleFragment() {
@@ -51,7 +52,46 @@ class SeriesFragment : BaseModuleFragment() {
         binding = DataBindingUtil.bind<ViewDataBinding>(view) as FragmentSeriesBinding
         binding?.lifecycleOwner = this
 
+        initViewModel()
         initToolbar()
+
+        seriesViewModel.conversationListDataView?.let {
+            setPageData(it)
+        } ?: seriesViewModel.getSeriesData()
+    }
+
+    private fun initViewModel() {
+        seriesViewModel.getPageLiveData().initObserver(this@SeriesFragment) {
+            if (it != null) {
+                this.handlePageData(it.status, it.data, it.message)
+            }
+        }
+    }
+
+    private fun handlePageData(status: ResourceState, data: PageData?, message: String?) {
+        binding?.seriesLoader?.gone()
+        when (status) {
+            ResourceState.DEFAULT -> {
+            }
+            ResourceState.LOADING -> showLoadingView()
+            ResourceState.SUCCESS -> setPageData(data!!)
+            ResourceState.ERROR -> showErrorView(message)
+            else -> {
+            }
+        }
+    }
+
+    private fun showErrorView(message: String?) {
+
+    }
+
+    private fun showLoadingView() {
+        binding?.seriesLoader?.visible()
+    }
+
+    private fun setPageData(data: PageData) {
+        // Set Adapter
+        activity?.toast(data.attributionText)
     }
 
     private fun initToolbar() {

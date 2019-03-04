@@ -1,12 +1,12 @@
-package com.anibalbastias.android.marvelapp.base.api.domain.interactor
+package com.anibalbastias.android.marvelapp.base.api.domain.base.interactor
 
-import com.anibalbastias.android.marvelapp.base.api.domain.executor.APIPostExecutionThread
-import com.anibalbastias.android.marvelapp.base.api.domain.executor.APIThreadExecutor
+import com.anibalbastias.android.marvelapp.base.api.domain.base.executor.APIPostExecutionThread
+import com.anibalbastias.android.marvelapp.base.api.domain.base.executor.APIThreadExecutor
 import io.reactivex.Observable
 import javax.inject.Inject
 
 /**
- * Created by joseignacio on 03-10-17.
+ * Created by anibalbastias on 03-10-17.
  */
 
 class DummyUseCase<T> @Inject constructor(

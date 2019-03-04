@@ -1,8 +1,8 @@
 package com.anibalbastias.android.marvelapp.base.module
 
 import com.anibalbastias.android.marvelapp.MarvelApplication
-import com.anibalbastias.android.marvelapp.base.api.domain.executor.APIPostExecutionThread
-import com.anibalbastias.android.marvelapp.base.api.domain.executor.APIThreadExecutor
+import com.anibalbastias.android.marvelapp.base.api.domain.base.executor.APIPostExecutionThread
+import com.anibalbastias.android.marvelapp.base.api.domain.base.executor.APIThreadExecutor
 import com.anibalbastias.android.marvelapp.base.module.executor.JobExecutor
 import com.anibalbastias.android.marvelapp.base.module.executor.UIThread
 import dagger.Module

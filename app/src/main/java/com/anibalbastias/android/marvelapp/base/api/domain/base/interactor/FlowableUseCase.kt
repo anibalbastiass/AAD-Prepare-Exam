@@ -1,7 +1,7 @@
 package au.com.carsales.apibaselib.domain.interactor
 
-import com.anibalbastias.android.marvelapp.base.api.domain.executor.APIPostExecutionThread
-import com.anibalbastias.android.marvelapp.base.api.domain.executor.APIThreadExecutor
+import com.anibalbastias.android.marvelapp.base.api.domain.base.executor.APIPostExecutionThread
+import com.anibalbastias.android.marvelapp.base.api.domain.base.executor.APIThreadExecutor
 import io.reactivex.Flowable
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable

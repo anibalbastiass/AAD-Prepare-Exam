@@ -14,7 +14,9 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        resValue "string", "marvel_tenant", "$globalRetailDependencies.MARVEL_TENANT"
+        resValue "string", "marvel_endpoint", "$globalMarvelDependencies.MARVEL_BASE_ENDPOINT"
+        resValue "string", "marvel_public_api_key", "$globalMarvelDependencies.MARVEL_PUBLIC_APIKEY"
+        resValue "string", "marvel_private_api_key", "$globalMarvelDependencies.MARVEL_PRIVATE_APIKEY"
     }
     buildTypes {
         release {

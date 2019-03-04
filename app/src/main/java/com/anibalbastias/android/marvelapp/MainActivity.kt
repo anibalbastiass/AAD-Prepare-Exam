@@ -6,14 +6,19 @@ import com.anibalbastias.android.marvelapp.ui.series.SeriesFragment
 
 class MainActivity : AppCompatActivity() {
 
+    private val seriesFragment: SeriesFragment by lazy {
+        SeriesFragment()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        appComponent().inject(this)
         setContentView(R.layout.activity_main)
+
+        appComponent().inject(this)
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, SeriesFragment())
+                .replace(R.id.container, seriesFragment.invoke())
                 .commitNow()
         }
     }

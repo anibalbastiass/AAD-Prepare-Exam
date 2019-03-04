@@ -45,12 +45,10 @@ ext {
     ktx_version = "1.0.0-alpha1"
     customCaugeVersion = "1.0.3"
 
-    globalRetailDependencies = [
-            APIKEY                               : "54e5b567475f0f2eccd09422e42fb944",
-
-            // ENDPOINTS
-            /***** Production ****/
-            MARVEL_ENDPOINT                      : "https://gateway.marvel.com:443/v1/public/",
+    globalMarvelDependencies = [
+            MARVEL_PUBLIC_APIKEY : "54e5b567475f0f2eccd09422e42fb944",
+            MARVEL_PRIVATE_APIKEY: "8464d32e0ce3ded7151f31650017ba8af55728e4",
+            MARVEL_BASE_ENDPOINT : "https://gateway.marvel.com/",
     ]
 
     marvelDependencies = [daggerAndroidCompiler   : "com.google.dagger:dagger-android-processor:${daggerVersion}",

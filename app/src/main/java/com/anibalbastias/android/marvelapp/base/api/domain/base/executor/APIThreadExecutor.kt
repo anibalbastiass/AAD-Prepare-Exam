@@ -1,4 +1,4 @@
-package com.anibalbastias.android.marvelapp.base.api.domain.executor
+package com.anibalbastias.android.marvelapp.base.api.domain.base.executor
 
 import java.util.concurrent.Executor
 
