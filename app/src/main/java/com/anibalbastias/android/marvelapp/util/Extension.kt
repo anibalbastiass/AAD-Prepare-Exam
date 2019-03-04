@@ -5,12 +5,21 @@ import android.app.Activity
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.Observer
+import android.content.Context
+import android.content.pm.PackageManager
+import android.content.res.Configuration
+import android.net.Uri
+import android.support.customtabs.CustomTabsIntent
+import android.support.v4.content.ContextCompat
 import android.support.v4.content.res.ResourcesCompat
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import com.anibalbastias.android.marvelapp.GlideApp
 import com.anibalbastias.android.marvelapp.MarvelApplication.Companion.appContext
 import com.anibalbastias.android.marvelapp.R
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import java.util.*
 
 fun <T> LiveData<T>.observeOnce(lifecycleOwner: LifecycleOwner, observer: Observer<T>) {
@@ -67,3 +76,63 @@ fun getMarvelAPIHash() =
 fun String.Companion.empty() = ""
 
 var etagPage: String? = String.empty()
+
+fun ImageView.loadImageWithoutPlaceholder(url: String) =
+    GlideApp.with(context)
+        .load(url)
+        .diskCacheStrategy(DiskCacheStrategy.ALL)
+        .skipMemoryCache(true)
+        .into(this)
+
+fun isTablet(context: Context): Boolean = try {
+    context.resources.getBoolean(R.bool.isTablet)
+} catch (ex: Exception) {
+    false
+}
+
+fun isPhone(context: Context): Boolean = try {
+    !context.resources.getBoolean(R.bool.isTablet)
+} catch (ex: Exception) {
+    false
+}
+
+
+fun isPortrait(context: Context): Boolean = try {
+    context.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
+} catch (ex: Exception) {
+    false
+}
+
+fun launchUrlInCustomTabBase(activity: Activity, url: String) {
+
+    try {
+        val chrome = arrayOf("com.android.chrome",
+            "com.chrome.beta",
+            "com.chrome.dev",
+            "com.google.android.apps.chrome")
+
+        var isChromeInstall = false
+        chrome.forEach {
+            try {
+                activity.packageManager.getPackageInfo(it, 0)
+                isChromeInstall = true
+                return@forEach
+            } catch (nameNotFoundException: PackageManager.NameNotFoundException) {
+            }
+        }
+        if (!isChromeInstall) {
+//            activity.launchUrlWebView(url)
+            return
+        }
+
+        val intentBuilder = CustomTabsIntent.Builder()
+        intentBuilder.setToolbarColor(ContextCompat.getColor(activity, R.color.primaryColor))
+        intentBuilder.setSecondaryToolbarColor(ContextCompat.getColor(activity, R.color.primaryColor))
+
+        val customTabsIntent = intentBuilder.build()
+        customTabsIntent.launchUrl(activity, Uri.parse(url))
+
+    } catch (exception: Exception) {
+        activity.toast(activity.getString(R.string.generic_error_message))
+    }
+}

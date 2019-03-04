@@ -3,15 +3,18 @@ package com.anibalbastias.android.marvelapp.ui.series
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.anibalbastias.android.marvelapp.R
 import com.anibalbastias.android.marvelapp.appComponent
 import com.anibalbastias.android.marvelapp.base.api.data.dataStoreFactory.common.page.PageData
+import com.anibalbastias.android.marvelapp.base.api.data.dataStoreFactory.series.model.SeriesItemData
 import com.anibalbastias.android.marvelapp.base.module.ViewModelFactory
 import com.anibalbastias.android.marvelapp.base.module.getViewModel
 import com.anibalbastias.android.marvelapp.base.view.BaseModuleFragment
 import com.anibalbastias.android.marvelapp.base.view.ResourceState
 import com.anibalbastias.android.marvelapp.databinding.FragmentSeriesBinding
+import com.anibalbastias.android.marvelapp.ui.series.adapter.SeriesListAdapter
 import com.anibalbastias.android.marvelapp.ui.series.viewmodel.SeriesViewModel
 import com.anibalbastias.android.marvelapp.util.*
 import javax.inject.Inject
@@ -91,7 +94,17 @@ class SeriesFragment : BaseModuleFragment() {
 
     private fun setPageData(data: PageData) {
         // Set Adapter
-        activity?.toast(data.attributionText)
+        setAdapter(data?.data?.results)
+    }
+
+    private fun setAdapter(results: List<SeriesItemData>?) {
+        binding?.seriesListRecyclerView?.layoutManager = LinearLayoutManager(activity!!,
+            LinearLayoutManager.VERTICAL, false)
+
+        val adapter = SeriesListAdapter()
+//        adapter?.itemCallback = this
+        adapter?.items = results as MutableList<SeriesItemData>?
+        binding?.seriesListRecyclerView?.adapter = adapter
     }
 
     private fun initToolbar() {

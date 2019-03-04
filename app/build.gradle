@@ -115,4 +115,13 @@ dependencies {
 
 //    kapt presentationDependencies.databinding
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.2.71")
+
+    //Glide
+    def modelBaseDependencies = rootProject.ext.moduleDependencies
+    api modelBaseDependencies.glide
+    kapt modelBaseDependencies.glideCompiler
+
+    implementation ('com.github.bumptech.glide:okhttp3-integration:1.4.0'){
+        exclude group: 'glide-parent'
+    }
 }
