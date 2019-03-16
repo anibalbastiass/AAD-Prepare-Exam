@@ -98,8 +98,10 @@ class SeriesFragment : BaseModuleFragment() {
     }
 
     private fun setAdapter(results: List<SeriesItemData>?) {
-        binding?.seriesListRecyclerView?.layoutManager = LinearLayoutManager(activity!!,
-            LinearLayoutManager.VERTICAL, false)
+        binding?.seriesListRecyclerView?.layoutManager = LinearLayoutManager(
+            activity!!,
+            LinearLayoutManager.VERTICAL, false
+        )
 
         val adapter = SeriesListAdapter()
 //        adapter?.itemCallback = this
@@ -108,11 +110,13 @@ class SeriesFragment : BaseModuleFragment() {
     }
 
     private fun initToolbar() {
-        binding?.seriesToolbar?.title = getString(R.string.series_toolbar)
-        binding?.seriesToolbar?.applyFontForToolbarTitle(activity!!)
-        binding?.seriesToolbar?.setNoArrowUpToolbar(activity!!)
-        binding?.seriesToolbar?.setNavigationOnClickListener {
-            activity?.finish()
+        binding?.seriesToolbar?.run {
+            title = getString(R.string.series_toolbar)
+            applyFontForToolbarTitle(activity!!)
+            setNoArrowUpToolbar(activity!!)
+            setNavigationOnClickListener {
+                activity?.finish()
+            }
         }
     }
 }
