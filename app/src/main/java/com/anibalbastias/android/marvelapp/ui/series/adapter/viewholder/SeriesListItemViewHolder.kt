@@ -9,7 +9,7 @@ class SeriesListItemViewHolder(val binding: ViewItemSeriesBinding) :
 
     fun bind(sectionList: MutableList<SeriesItemData>?, position: Int) {
         val item = sectionList!![position]
-        binding.imageUrl = item.thumbnail?.path + item.thumbnail?.extension
+        binding.imageUrl = item.thumbnail?.path + "." + item.thumbnail?.extension
         binding.seriesVD = item
     }
 }
