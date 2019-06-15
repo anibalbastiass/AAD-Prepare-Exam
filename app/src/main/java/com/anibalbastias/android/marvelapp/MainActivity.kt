@@ -1,6 +1,6 @@
 package com.anibalbastias.android.marvelapp
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.anibalbastias.android.marvelapp.ui.series.SeriesFragment
 

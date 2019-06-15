@@ -1,9 +1,9 @@
 package com.anibalbastias.android.marvelapp.ui.series
 
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.View
 import com.anibalbastias.android.marvelapp.R
 import com.anibalbastias.android.marvelapp.appComponent

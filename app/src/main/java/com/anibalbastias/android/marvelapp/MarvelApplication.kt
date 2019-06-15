@@ -1,8 +1,8 @@
 package com.anibalbastias.android.marvelapp
 
 import android.content.Context
-import android.support.multidex.MultiDexApplication
-import android.support.v4.app.Fragment
+import androidx.multidex.MultiDexApplication
+import androidx.fragment.app.Fragment
 import com.anibalbastias.android.marvelapp.base.view.BaseModuleFragment
 import com.anibalbastias.android.marvelapp.component.ApplicationComponent
 import com.anibalbastias.android.marvelapp.component.DaggerApplicationComponent

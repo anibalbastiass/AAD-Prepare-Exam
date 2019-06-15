@@ -1,6 +1,6 @@
 package com.anibalbastias.android.marvelapp.module
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.anibalbastias.android.marvelapp.base.module.ViewModelKey
 import com.anibalbastias.android.marvelapp.base.module.module.BaseViewModelModule
 import com.anibalbastias.android.marvelapp.ui.series.viewmodel.SeriesViewModel

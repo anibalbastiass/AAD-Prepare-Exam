@@ -1,6 +1,6 @@
 package com.anibalbastias.android.marvelapp.util
 
-import android.databinding.BindingAdapter
+import androidx.databinding.BindingAdapter
 import android.widget.ImageView
 
 @BindingAdapter("setImageUrl")

@@ -1,7 +1,7 @@
 package com.anibalbastias.android.marvelapp.ui.series.viewmodel
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.anibalbastias.android.marvelapp.base.api.data.dataStoreFactory.common.page.PageData
 import com.anibalbastias.android.marvelapp.base.api.domain.series.usecase.GetSeriesUseCase
 import com.anibalbastias.android.marvelapp.base.view.Resource

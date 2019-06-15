@@ -1,6 +1,6 @@
 package com.anibalbastias.android.marvelapp.ui.series.adapter.viewholder
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import com.anibalbastias.android.marvelapp.base.api.data.dataStoreFactory.series.model.SeriesItemData
 import com.anibalbastias.android.marvelapp.databinding.ViewItemSeriesBinding
 
