@@ -13,3 +13,7 @@ This repository is a Android app example for prepare and study for Asociate Andr
 - Job Schedulers + Notifications
 - Unit Testings
 - Instrumental Testings
+
+## Screenshots
+
+![Series App](https://raw.githubusercontent.com/anibalbastiass/AAD-Prepare-Exam/develop/screenshots/device-2019-12-02-100924.png)
